@@ -12,7 +12,7 @@ pipeline{
         DOCKER_USER = "nadir24950@gmail.com"
         DOCKER_PASS = 'dockerhub'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
-        IMAGE_TAG = "${RELEASE}-${BUILD-NUMBER}" 
+        IMAGE_TAG = "${RELEASE}" + "-" + "${BUILD-NUMBER}" 
     } 
     
     stages{
