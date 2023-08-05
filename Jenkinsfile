@@ -29,13 +29,13 @@ pipeline{
             }
 
         }
-         stage("Build Application"){
+        stage("Build Application"){
             steps {
                 sh "mvn clean package"
             }
 
         }
-         stage("Test Application"){
+        stage("Test Application"){
             steps {
                 sh "mvn test"
             }
@@ -51,7 +51,7 @@ pipeline{
         stage("Quality Gate"){
             steps {
                 script{
-                    timeout(time: 5, unit: 'MINUTES') {
+                    timeout(time: 1, unit: 'MINUTES') {
                         def qg = waitForQualityGate()
                         if (qg.status != 'OK') {
                             error "Pipeline aborted due to quality gate failure: ${qg.status}"
