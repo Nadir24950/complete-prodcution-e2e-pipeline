@@ -7,7 +7,7 @@ pipeline{
         maven 'Maven3'
     }
     environment {
-        APP_NAME = "complete-prodcution-e2e-pipeline"
+        APP_NAME = "complete-production-e2e-pipeline"
         RELEASE = "1.0.0"
         DOCKER_USER = "nadir24950"
         DOCKER_PASS = 'dockerhub'
@@ -25,7 +25,7 @@ pipeline{
     
         stage("Checkout from SCM"){
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Nadir24950/complete-prodcution-e2e-pipeline'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Nadir24950/complete-production-e2e-pipeline'
             }
 
         }
